@@ -1,0 +1,606 @@
+/* Genel Sayfa ve Font Ayarları */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+}
+
+/* Ana Oyun Konteyneri ve Arka Plan */
+.game-container, .game-board {
+    min-height: 100vh;
+    padding: 1rem;
+    background-image: linear-gradient(to bottom right, #111827, #4c1d95, #312e81);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Başlangıç Menüsü */
+.start-menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 42rem;
+    width: 100%;
+    color: white;
+}
+
+.game-logo {
+    position: fixed;
+    max-width: 150px;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.start-menu-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin: 30px 0;
+}
+
+.title {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #818cf8, #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #d1d5db;
+}
+
+/* Oyuncu Sayısı Seçimi */
+.player-select-container {
+    margin-bottom: 2rem;
+}
+.player-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.player-select-icon {
+    color: #818cf8;
+}
+.player-select label {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.player-select select {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #a5b4fc;
+    border-radius: 0.5rem;
+    color: white;
+}
+.player-select select option {
+    color: black;
+}
+.player-select select:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+/* Butonlar */
+.start-button {
+    width: 100%;
+    background-image: linear-gradient(to right, #4f46e5, #ec4899);
+    color: white;
+    padding: 1rem 0;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    border: none;
+    cursor: pointer;
+}
+.start-button:hover {
+    background-image: linear-gradient(to right, #4338ca, #be185d);
+    transform: scale(1.05);
+}
+
+.rules-button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 0;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.rules-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Kurallar Ekranı */
+.rules-display {
+    margin-top: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+}
+.rules-display h3 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+.rules-display ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+/* Kazanan Ekranı */
+.winner-screen {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 42rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.winner-icon {
+    width: 6rem;
+    height: 6rem;
+    color: #facc15;
+    margin: 0 auto 1rem;
+}
+.winner-screen p {
+    font-size: 1.25rem;
+    color: #d1d5db;
+    margin-bottom: 2rem;
+}
+
+/* Kart Stilleri */
+.card {
+    width: 5rem;
+    height: 8rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.card:hover {
+    transform: scale(1.1) translateY(-0.5rem);
+}
+.card-small {
+    width: 4rem;
+    height: 6rem;
+}
+.card-highlight {
+    border-color: #facc15;
+    box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.5);
+}
+.card-facedown {
+    background-image: linear-gradient(to bottom right, #4338ca, #be185d);
+    border: 2px solid #6366f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-server-icon {
+    width: 2rem;
+    height: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+.card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.card-header {
+    font-weight: 700;
+    align-self: flex-start;
+}
+.card-footer {
+    font-weight: 700;
+    align-self: flex-end;
+    transform: rotate(180deg);
+}
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.card-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+.card-name {
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.1;
+}
+.card-desc {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+/* Modal Pencereleri (Renk/Oyuncu Seçimi) */
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+.modal-content {
+    background-color: #1f2937;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+.modal-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+.color-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+.color-picker button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+.player-swap-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.player-swap-picker button {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #4f46e5;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.player-swap-picker button:hover {
+    background-color: #4338ca;
+}
+
+
+/* Ana Oyun Alanı */
+.game-area {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 2rem);
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* Rakip Oyuncu Pozisyonları */
+.opponent-info {
+    position: absolute;
+    transition: all 0.5s;
+}
+.pos-top-center { top: 1rem; left: 50%; transform: translateX(-50%); }
+.pos-left-center { left: 1rem; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+.pos-right-center { right: 1rem; top: 50%; transform: translateY(-50%) rotate(90deg); }
+.pos-top-left { top: 1rem; left: 33.33%; transform: translateX(-50%); }
+.pos-top-right { top: 1rem; right: 33.33%; transform: translateX(50%); }
+.pos-left-top { left: 1rem; top: 33.33%; transform: translateY(-50%) rotate(-90deg); }
+.pos-left-bottom { left: 1rem; top: 66.66%; transform: translateY(-50%) rotate(-90deg); }
+.pos-right-top { right: 1rem; top: 33.33%; transform: translateY(-50%) rotate(90deg); }
+.pos-right-bottom { right: 1rem; top: 66.66%; transform: translateY(-50%) rotate(90deg); }
+
+.opponent-box {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.opponent-box-active {
+    box-shadow: 0 0 0 2px #facc15;
+}
+.opponent-name { font-weight: 700; font-size: 0.875rem; }
+.opponent-card-count { font-size: 0.75rem; }
+
+/* Orta Alan (Deste ve Yığın) */
+.center-area {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.deck-area, .pile-area { text-align: center; }
+.deck-count { margin-top: 0.5rem; font-weight: 600; }
+.card-placeholder { width: 5rem; height: 8rem; border-radius: 0.5rem; background-color: rgba(0,0,0,0.2); }
+
+/* Mesaj Alanı */
+.message-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.125rem;
+    min-width: 300px;
+}
+.attack-message {
+    color: #f87171;
+    font-weight: 700;
+    font-size: 1.5rem;
+    animation: pulse 1s infinite;
+}
+
+/* Kontrol Butonları */
+.controls-area {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.restart-button {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 0;
+    border-radius: 0.75rem;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.restart-button:hover {
+    background-color: #dc2626;
+}
+
+.quit-button {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 0;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.quit-button:hover {
+    background-color: #6b7280;
+}
+
+/* Oyuncu Eli Alanı */
+.player-area {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.player-hand {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 14rem; /* Kartların yayılması için alan */
+    padding-bottom: 2rem;
+}
+.card-wrapper:first-child {
+    margin: 0 0.25rem;
+}
+
+.card-wrapper:hover {
+    z-index: 10;
+    transform: translateY(-2rem) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.layerup-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-image: linear-gradient(to right, #f59e0b, #ef4444);
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    animation: pulse 1.5s infinite;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Kütüphane Ekranı */
+.library-screen {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 2.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    padding: 3rem;
+    max-width: 90rem;
+    width: 100%;
+    color: white;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.library-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.library-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.layer-section {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.layer-section:hover {
+    transform: translateY(-2px);
+}
+
+.layer-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.layer-description {
+    font-size: 1rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.protocols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.protocol-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: all 0.2s;
+}
+
+.protocol-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.protocol-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fbbf24;
+}
+
+.protocol-description {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    line-height: 1.5;
+}
+
+.library-footer {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.library-button {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.65rem 0;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.library-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animasyonlar */
+@keyframes pulse {
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
